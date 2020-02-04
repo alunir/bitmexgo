@@ -1278,10 +1278,6 @@ This endpoint is used for placing bulk orders. Valid order types are Market, Lim
 @return []Order
 */
 
-type OrderNewBulkOpts struct {
-	Orders optional.String
-}
-
 func (a *OrderApiService) OrderNewBulk(ctx context.Context, symbol string, localVarOptionals []*OrderNewOpts) ([]Order, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
