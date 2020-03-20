@@ -36,7 +36,7 @@ func Test(t *testing.T) {
 	paramBuy.OrdType.Set("Limit")
 	paramBuy.Side.Set("Buy")
 	paramBuy.OrderQty.Set(100)
-	paramBuy.Price.Set(8000.5)
+	paramBuy.Price.Set(1000.0)
 
 	params = append(params, &paramBuy)
 
@@ -44,12 +44,12 @@ func Test(t *testing.T) {
 	paramSell.OrdType.Set("Limit")
 	paramSell.Side.Set("Sell")
 	paramSell.OrderQty.Set(50)
-	paramSell.Price.Set(16000)
+	paramSell.Price.Set(19700.5)
 
 	params = append(params, &paramSell)
 
-	order, res, err := testnetClient.OrderApi.OrderNewBulk(auth, "XBTUSD", params)
-	fmt.Println(order)
+	orders, res, err := testnetClient.OrderApi.OrderNewBulk(auth, "XBTUSD", params)
+	fmt.Println(orders) // if sending orders is failed, 'orders' returns an empty list.
 	fmt.Println(res)
 	fmt.Println(err)
 }

@@ -1,4 +1,4 @@
-module github.com/jimako1989/bitmexgo
+module github.com/alunir/bitmexgo
 
 go 1.13
 
